@@ -93,6 +93,12 @@ public class Vec2 {
         return new Vec2(x*other, y*other);
     }
 
+    /**
+        * Calculates the dot product of this vector with another vector.
+        *
+        * @param other The vector to calculate the dot product with.
+        * @return The dot product of this vector and the other vector.
+    */
     public float dot(Vec2 other) {
         return x*other.x + y*other.y;
     }
