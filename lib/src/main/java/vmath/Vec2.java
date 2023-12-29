@@ -53,6 +53,11 @@ public class Vec2 {
         return (float) Math.sqrt(x*x + y*y);
     }
 
+    /**
+        * Normalizes the vector to a unit vector.
+        *
+        * @return A new vector representing the normalized version of this vector.
+    */
     public Vec2 norm() {
         float norm = 1.0f / (float) Math.sqrt(x*x + y*y);
         return new Vec2(x*norm, y*norm);
