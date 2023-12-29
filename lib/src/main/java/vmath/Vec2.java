@@ -103,6 +103,11 @@ public class Vec2 {
         return x*other.x + y*other.y;
     }
 
+    /**
+        * Returns a string representation of the vector in the format "(x, y)".
+        *
+        * @return A string representation of the vector.
+    */
     @Override
     public String toString() {
         return "(" + x + ", " + y + ")";
