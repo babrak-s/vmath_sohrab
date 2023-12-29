@@ -4,10 +4,20 @@ public class Vec2 {
     private final float x;
     private final float y;
 
+    /**
+        * Constructs a zero vector (0.0, 0.0).
+    */
     public Vec2() {
         this(0.0f, 0.0f);
     }
 
+    /**
+         * Constructs a vector with specified x and y coordinates.
+         *
+         * @param x The x-coordinate of the vector.
+         * @param y The y-coordinate of the vector.
+         * @throws ArithmeticException if x or y is NaN.
+     */
     public Vec2(float x, float y) {
         if (Float.isNaN(x) || Float.isNaN(y)) {
             throw new ArithmeticException();
