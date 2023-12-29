@@ -26,10 +26,20 @@ public class Vec2 {
         this.y = y;
     }
 
+    /**
+         * Returns the x-coordinate of the vector.
+         *
+         * @return The x-coordinate.
+     */
     public float x() {
         return x;
     }
 
+    /**
+         * Returns the y-coordinate of the vector.
+         *
+         * @return The y-coordinate.
+     */
     public float y() {
         return y;
     }
