@@ -73,6 +73,12 @@ public class Vec2 {
         return new Vec2(x + other.x, y + other.y);
     }
 
+    /**
+        * Subtracts another vector from this vector.
+        *
+        * @param other The vector to be subtracted.
+        * @return A new vector representing the difference between this vector and the other vector.
+    */
     public Vec2 sub(Vec2 other) {
         return new Vec2(x - other.x, y - other.y);
     }
