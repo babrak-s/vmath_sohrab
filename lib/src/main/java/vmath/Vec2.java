@@ -63,6 +63,12 @@ public class Vec2 {
         return new Vec2(x*norm, y*norm);
     }
 
+    /**
+        * Adds this vector to another vector.
+        *
+        * @param other The vector to be added.
+        * @return A new vector representing the sum of this vector and the other vector.
+    */
     public Vec2 add(Vec2 other) {
         return new Vec2(x + other.x, y + other.y);
     }
