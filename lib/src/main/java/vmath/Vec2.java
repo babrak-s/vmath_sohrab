@@ -12,11 +12,11 @@ public class Vec2 {
     }
 
     /**
-         * Constructs a vector with specified x and y coordinates.
-         *
-         * @param x The x-coordinate of the vector.
-         * @param y The y-coordinate of the vector.
-         * @throws ArithmeticException if x or y is NaN.
+        * Constructs a vector with specified x and y coordinates.
+        *
+        * @param x The x-coordinate of the vector.
+        * @param y The y-coordinate of the vector.
+        * @throws ArithmeticException if x or y is NaN.
      */
     public Vec2(float x, float y) {
         if (Float.isNaN(x) || Float.isNaN(y)) {
@@ -27,23 +27,28 @@ public class Vec2 {
     }
 
     /**
-         * Returns the x-coordinate of the vector.
-         *
-         * @return The x-coordinate.
+        * Returns the x-coordinate of the vector.
+        *
+        * @return The x-coordinate.
      */
     public float x() {
         return x;
     }
 
     /**
-         * Returns the y-coordinate of the vector.
-         *
-         * @return The y-coordinate.
+        * Returns the y-coordinate of the vector.
+        *
+        * @return The y-coordinate.
      */
     public float y() {
         return y;
     }
 
+    /**
+        * Calculates the magnitude (length) of the vector.
+        *
+        * @return The magnitude of the vector.
+    */
     public float mag() {
         return (float) Math.sqrt(x*x + y*y);
     }
