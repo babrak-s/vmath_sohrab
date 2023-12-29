@@ -83,6 +83,12 @@ public class Vec2 {
         return new Vec2(x - other.x, y - other.y);
     }
 
+    /**
+        * Multiplies this vector by a scalar.
+        *
+        * @param other The scalar value to multiply with.
+        * @return A new vector representing the scaled vector.
+    */
     public Vec2 mul(float other) {
         return new Vec2(x*other, y*other);
     }
