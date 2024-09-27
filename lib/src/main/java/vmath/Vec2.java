@@ -28,6 +28,10 @@ public class Vec2 {
         return (float) Math.sqrt(x*x + y*y);
     }
 
+    public float magSqr() {
+        return x*x + y*y;
+    }
+
     public Vec2 norm() {
         float norm = 1.0f / (float) Math.sqrt(x*x + y*y);
         return new Vec2(x*norm, y*norm);
@@ -47,6 +51,12 @@ public class Vec2 {
 
     public float dot(Vec2 other) {
         return x*other.x + y*other.y;
+    }
+
+    public Vec2 lerp(Vec2 other, float t) {
+        float newX = (1 - t)*x + t*other.x;
+        float newY = (1 - t)*y + t*other.y;
+        return new Vec2(newX, newY);
     }
 
     @Override

@@ -32,6 +32,10 @@ public class Vec3 {
         return (float) Math.sqrt(x*x + y*y + z*z);
     }
 
+    public float magSqr() {
+        return x*x + y*y + z*z;
+    }
+
     public Vec3 norm() {
         float norm = 1.0f / (float) Math.sqrt(x*x + y*y + z*z);
         return new Vec3(x*norm, y*norm, z*norm);
@@ -59,6 +63,18 @@ public class Vec3 {
             z*other.x() - x*other.z(),
             x*other.y() - y*other.x()
         );
+    }
+
+    public float triple(Vec3 b, Vec3 c) {
+        Vec3 bCrossC = b.cross(c);
+        return this.dot(bCrossC);
+    }
+
+    public Vec3 lerp(Vec3 other, float t) {
+        float newX = (1 - t)*x + t*other.x;
+        float newY = (1 - t)*y + t*other.y;
+        float newZ = (1 - t)*z + t*other.z;
+        return new Vec3(newX, newY, newZ);
     }
 
     public String toString() {

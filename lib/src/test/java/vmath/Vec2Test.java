@@ -46,6 +46,30 @@ public class Vec2Test {
     }
 
     @Test
+    void givenZeroVector_whenSquaredMagnitudeCalculated_thenResultIsZero() {
+        var v = new Vec2(0.0f, 0.0f);
+        assertEquals(v.magSqr(), 0.0f);
+    }
+
+    @Test
+    void givenNonZeroVectors_whenSquaredMagnitudeCalculated_thenResultsAreCorrect() {
+        var v1 = new Vec2(0.0f, 1.0f);
+        assertEquals(v1.magSqr(), 1.0f);
+
+        var v2 = new Vec2(1.0f, 0.0f);
+        assertEquals(v2.magSqr(), 1.0f);
+
+        var v3 = new Vec2(0.0f, -1.0f);
+        assertEquals(v3.magSqr(), 1.0f);
+
+        var v4 = new Vec2(-1.0f, 0.0f);
+        assertEquals(v4.magSqr(), 1.0f);
+
+        var v5 = new Vec2(1.0f, 1.0f);
+        assertEquals(v5.magSqr(), 2.0);
+    }
+
+    @Test
     void givenNonZeroVector_whenNormalized_thenResultIsUnitVector() {
         var v = new Vec2(0.0f, 10.0f).norm();
         assertEquals(v.x(), 0.0f);
@@ -113,6 +137,23 @@ public class Vec2Test {
         var l2 = new Vec2(1.0f, -1.0f);
         var dot2 = n2.dot(l2);
         assertEquals(dot2, -2.0f);
+    }
+
+    @Test
+    void givenTwoVectors_whenLerpCalculated_thenResultIsCorrect() {
+        Vec2 v1 = new Vec2(1.0f, 2.0f);
+        Vec2 v2 = new Vec2(3.0f, 4.0f);
+        float t1 = 0.5f;
+        Vec2 result1 = v1.lerp(v2, t1);
+        assertEquals(result1.x(), 2.0f);
+        assertEquals(result1.y(), 3.0f);
+
+        Vec2 v3 = new Vec2(-1.0f, 0.0f);
+        Vec2 v4 = new Vec2(1.0f, 2.0f);
+        float t2 = 0.25f;
+        Vec2 result2 = v3.lerp(v4, t2);
+        assertEquals(result2.x(), -0.5f);
+        assertEquals(result2.y(), 0.5f);
     }
 
     @Test
